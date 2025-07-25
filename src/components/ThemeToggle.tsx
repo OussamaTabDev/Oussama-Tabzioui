@@ -34,7 +34,7 @@ const ThemeToggle = () => {
   return (
     <div className="flex flex-col gap-2">
       {/* Theme Toggle */}
-      <button
+      {/* <button
         onClick={toggleTheme}
         className="glass-card p-3 hover:border-accent-primary transition-all hover:scale-105 group"
         title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
@@ -44,7 +44,7 @@ const ThemeToggle = () => {
         ) : (
           <Moon size={20} className="text-accent-primary group-hover:text-accent-secondary transition-colors" />
         )}
-      </button>
+      </button> */}
 
       {/* Accent Toggle */}
       <button
