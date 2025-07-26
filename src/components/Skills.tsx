@@ -32,7 +32,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
+    <section id="skills" className="py-20 relative animate-slide-up">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-mono font-bold text-center mb-16 text-gradient">
           {t('skills.title')}
@@ -42,7 +42,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="glass-card p-6 h-full flex flex-col"
+              className="glass-card p-6 h-full flex flex-col hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-accent-primary/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center mb-4">

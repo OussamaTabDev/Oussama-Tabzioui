@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden animate-fade-in">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-surface via-surface to-surface-glass" />
       <div 
@@ -46,14 +46,14 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Avatar */}
           <div className="mb-8 relative">
-            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden glass-card border-2 border-accent-primary">
+            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden glass-card border-2 border-accent-primary hover-scale">
               <img 
                 src={avatarImage} 
                 alt="Oussama Tabzioui"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 animate-pulse" />
+            <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 animate-glow-pulse" />
           </div>
 
           {/* Main Heading */}
@@ -75,7 +75,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <button
               onClick={scrollToProjects}
-              className="btn-neon w-full sm:w-auto"
+              className="btn-neon w-full sm:w-auto hover-scale smooth-transition"
             >
               {t('hero.projects')}
             </button>
@@ -84,7 +84,7 @@ const Hero = () => {
               href="/assets/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 glass-card hover:border-accent-primary transition-all w-full sm:w-auto justify-center"
+              className="flex items-center gap-2 px-6 py-3 glass-card hover:border-accent-primary smooth-transition w-full sm:w-auto justify-center hover-scale"
             >
               <Download size={20} />
               {t('hero.cv')}
@@ -94,7 +94,7 @@ const Hero = () => {
               href="https://github.com/OussamaTabDev"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-6 py-3 glass-card hover:border-accent-primary transition-all w-full sm:w-auto justify-center"
+              className="flex items-center gap-2 px-6 py-3 glass-card hover:border-accent-primary smooth-transition w-full sm:w-auto justify-center hover-scale"
             >
               <Github size={20} />
               {t('hero.github')}
@@ -102,11 +102,11 @@ const Hero = () => {
           </div>
 
           {/* Scroll Indicator */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center animate-slide-up">
             <span className="text-text-muted text-sm mb-2 font-mono">Scroll to explore</span>
             <ArrowDown 
               size={24} 
-              className="text-accent-primary animate-bounce cursor-pointer hover:text-accent-secondary transition-colors"
+              className="text-accent-primary animate-bounce cursor-pointer hover:text-accent-secondary smooth-transition hover-scale"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             />
           </div>

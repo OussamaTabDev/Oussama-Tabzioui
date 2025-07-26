@@ -4,14 +4,14 @@ const About = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-20 relative">
+    <section id="about" className="py-20 relative animate-slide-up">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-mono font-bold mb-8 text-gradient">
             {t('about.title')}
           </h2>
           
-          <div className="glass-card p-8 md:p-12">
+          <div className="glass-card p-8 md:p-12 hover:scale-105 transition-transform duration-300">
             <p className="text-lg leading-relaxed text-text-secondary">
               {t('about.content')}
             </p>

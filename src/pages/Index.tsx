@@ -10,7 +10,7 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ThemeToggle from '../components/ThemeToggle';
 import LanguageToggle from '../components/LanguageToggle';
-import { LanguageProvider } from '../context/LanguageContext';
+
 import { useToast } from '../hooks/use-toast';
 
 const Index = () => {
@@ -70,31 +70,29 @@ const Index = () => {
   }, []);
 
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-surface text-text-primary relative overflow-x-hidden">
-        {matrixMode && <div className="matrix-rain" />}
-        
-        <Navigation />
-        
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Contact />
-        </main>
-        
-        <Footer />
-        
-        {/* Fixed controls */}
-        <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
-          <ThemeToggle />
-          <LanguageToggle />
-        </div>
+    <div className="min-h-screen bg-surface text-text-primary relative overflow-x-hidden">
+      {matrixMode && <div className="matrix-rain" />}
+      
+      <Navigation />
+      
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Contact />
+      </main>
+      
+      <Footer />
+      
+      {/* Fixed controls */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+        <ThemeToggle />
+        <LanguageToggle />
       </div>
-    </LanguageProvider>
+    </div>
   );
 };
 

@@ -97,35 +97,40 @@ const ProjectsPage = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Completed':
-        return 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
+        return 'bg-green-500/20 text-green-400 border border-green-500/30';
       case 'In Progress':
-        return 'bg-amber-500/20 text-amber-400 border-amber-500/30';
+        return 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30';
       default:
-        return 'bg-slate-500/20 text-slate-400 border-slate-500/30';
+        return 'bg-gray-500/20 text-gray-400 border border-gray-500/30';
     }
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-surface relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent-primary/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-secondary/10 rounded-full blur-3xl"></div>
+      
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="pt-24 pb-16 px-6 relative animate-fade-in">
+        <div className="container mx-auto">
           <div className="flex items-center gap-4 mb-8">
             <Link to="/">
-              <Button variant="ghost" size="sm" className="gap-2">
+              <button className="flex items-center gap-2 px-4 py-2 text-text-secondary hover:text-accent-primary transition-colors font-mono">
                 <ArrowLeft className="w-4 h-4" />
                 Back to Portfolio
-              </Button>
+              </button>
             </Link>
           </div>
           
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-mono font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-6">
+            <h1 className="text-4xl md:text-6xl font-mono font-bold mb-6 text-gradient">
               All Projects
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
               A comprehensive collection of my development work, from web applications to AI-powered solutions.
             </p>
           </div>
@@ -133,54 +138,56 @@ const ProjectsPage = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 px-6 relative animate-slide-up">
+        <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {allProjects.map((project, index) => (
-              <Card 
+              <div
                 key={index}
-                className="group hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 cursor-pointer transform hover:scale-105 border-border/50 backdrop-blur-sm"
+                className="project-card cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-accent-primary/20"
                 onClick={() => openModal(project)}
               >
-                <div className="aspect-video overflow-hidden rounded-t-lg">
-                  <img 
-                    src={project.image} 
+                <div className="relative overflow-hidden rounded-t-lg">
+                  <img
+                    src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-48 object-cover transition-transform hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent" />
+                  {project.status && (
+                    <div className={`absolute top-4 right-4 px-2 py-1 rounded-full text-xs font-mono ${getStatusColor(project.status)}`}>
+                      {project.status}
+                    </div>
+                  )}
                 </div>
                 
-                <CardHeader>
-                  <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="font-mono text-xl group-hover:text-primary transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    {project.status && (
-                      <Badge className={`text-xs ${getStatusColor(project.status)}`}>
-                        {project.status}
-                      </Badge>
-                    )}
-                  </div>
-                  <CardDescription className="text-muted-foreground">
+                <div className="p-6">
+                  <h3 className="text-xl font-mono font-semibold mb-3 text-accent-primary">
+                    {project.title}
+                  </h3>
+                  
+                  <p className="text-text-secondary mb-4 line-clamp-2">
                     {project.description}
-                  </CardDescription>
-                </CardHeader>
-                
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.slice(0, 3).map((tech) => (
-                      <Badge key={tech} variant="secondary" className="text-xs">
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.slice(0, 3).map((tech, techIndex) => (
+                      <span key={techIndex} className="skill-tag text-xs">
                         {tech}
-                      </Badge>
+                      </span>
                     ))}
                     {project.tech.length > 3 && (
-                      <Badge variant="outline" className="text-xs">
+                      <span className="skill-tag text-xs opacity-60">
                         +{project.tech.length - 3} more
-                      </Badge>
+                      </span>
                     )}
                   </div>
-                </CardContent>
-              </Card>
+                  
+                  <button className="text-accent-primary font-mono text-sm hover:text-accent-secondary transition-colors">
+                    View Details →
+                  </button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -188,62 +195,76 @@ const ProjectsPage = () => {
 
       {/* Project Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-card/95 backdrop-blur-lg rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-border/50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-surface/80 backdrop-blur-sm"
+            onClick={closeModal}
+          />
+          
+          <div className="relative glass-card max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 p-2 hover:bg-card-hover rounded-full transition-colors z-10 text-text-primary"
+            >
+              ✕
+            </button>
+            
+            <img
+              src={selectedProject.image}
+              alt={selectedProject.title}
+              className="w-full h-64 object-cover rounded-t-lg"
+            />
+            
             <div className="p-6">
-              <div className="flex justify-between items-start mb-6">
-                <div>
-                  <h3 className="text-2xl font-mono font-bold mb-2">{selectedProject.title}</h3>
-                  {selectedProject.status && (
-                    <Badge className={getStatusColor(selectedProject.status)}>
-                      {selectedProject.status}
-                    </Badge>
-                  )}
-                </div>
-                <Button variant="ghost" onClick={closeModal} className="text-muted-foreground hover:text-foreground">
-                  ✕
-                </Button>
+              <div className="flex items-start justify-between mb-4">
+                <h3 className="text-2xl font-mono font-bold text-gradient">
+                  {selectedProject.title}
+                </h3>
+                {selectedProject.status && (
+                  <span className={`px-3 py-1 rounded-full text-xs font-mono ${getStatusColor(selectedProject.status)}`}>
+                    {selectedProject.status}
+                  </span>
+                )}
               </div>
               
-              <div className="aspect-video mb-6 rounded-lg overflow-hidden">
-                <img 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-text-secondary mb-6 leading-relaxed">
                 {selectedProject.longDescription}
               </p>
               
               <div className="mb-6">
-                <h4 className="font-mono font-semibold mb-3">Technologies Used:</h4>
+                <h4 className="font-mono font-semibold mb-3 text-accent-primary">Technologies Used:</h4>
                 <div className="flex flex-wrap gap-2">
-                  {selectedProject.tech.map((tech) => (
-                    <Badge key={tech} variant="secondary">
+                  {selectedProject.tech.map((tech, index) => (
+                    <span key={index} className="skill-tag">
                       {tech}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
               </div>
               
               <div className="flex gap-4">
                 {selectedProject.github && (
-                  <Button asChild className="gap-2">
-                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </a>
-                  </Button>
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 btn-neon"
+                  >
+                    <Github size={20} />
+                    View Code
+                  </a>
                 )}
+                
                 {selectedProject.demo && (
-                  <Button asChild variant="outline" className="gap-2">
-                    <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </a>
-                  </Button>
+                  <a
+                    href={selectedProject.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 glass-card px-4 py-2 hover:border-accent-primary transition-colors"
+                  >
+                    <ExternalLink size={20} />
+                    Live Demo
+                  </a>
                 )}
               </div>
             </div>

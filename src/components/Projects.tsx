@@ -58,7 +58,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-20 relative animate-slide-up">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-mono font-bold mb-4 text-gradient">
@@ -77,9 +77,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="project-card cursor-pointer"
+              className="project-card cursor-pointer hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-accent-primary/20"
               onClick={() => openModal(project)}
-              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
