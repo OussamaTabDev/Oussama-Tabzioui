@@ -38,7 +38,7 @@ const Experience = () => {
                         <h3 className="text-xl font-mono font-semibold text-accent-primary mb-1">
                           {exp.title}
                         </h3>
-                        <div className="flex items-center gap-2 text-text-secondary mb-2">
+                        <div className="flex items-center gap-2 text-text-primary mb-2">
                           <Briefcase size={16} />
                           <span>{exp.company}</span>
                         </div>
@@ -50,7 +50,7 @@ const Experience = () => {
                       </div>
                     </div>
                     
-                    <p className="text-text-secondary leading-relaxed">
+                    <p className="text-text-primary leading-relaxed">
                       {exp.description}
                     </p>
                     

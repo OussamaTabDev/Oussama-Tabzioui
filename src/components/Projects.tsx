@@ -67,8 +67,7 @@ const Projects = () => {
           <p className="text-text-secondary text-lg mb-6">Featured projects from my portfolio</p>
           <Link to="/projects">
             <button className="btn-neon gap-2">
-              View All Projects
-              <ExternalLink size={16} />
+              View All Projects <ExternalLink size={0} />
             </button>
           </Link>
         </div>
@@ -94,7 +93,7 @@ const Projects = () => {
                   {project.title}
                 </h3>
                 
-                <p className="text-text-secondary mb-4 line-clamp-2">
+                <p className="text-text-primary mb-4 line-clamp-2">
                   {project.description}
                 </p>
                 
@@ -142,7 +141,7 @@ const Projects = () => {
                 {selectedProject.title}
               </h3>
               
-              <p className="text-text-secondary mb-6 leading-relaxed">
+              <p className="text-text-primary mb-6 leading-relaxed">
                 {selectedProject.longDescription}
               </p>
               

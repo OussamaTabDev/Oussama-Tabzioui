@@ -10,9 +10,9 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [
-    react()
-    // mode === 'development' &&
-    // componentTagger(),
+    react(),
+    mode === 'development' &&
+    componentTagger(),
   ].filter(Boolean),
   base:"/oussama-tabzioui/",
   resolve: {

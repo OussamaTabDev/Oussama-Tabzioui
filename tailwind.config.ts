@@ -33,6 +33,7 @@ export default {
 				'text-primary': 'hsl(var(--text-primary))',
 				'text-secondary': 'hsl(var(--text-secondary))',
 				'text-muted': 'hsl(var(--text-muted))',
+				'text-secondary-muted': 'hsl(var(--text-secondary-muted))',
 				'accent-primary': 'hsl(var(--accent-primary))',
 				'accent-secondary': 'hsl(var(--accent-secondary))',
 				'accent-glow': 'hsl(var(--accent-glow))',

@@ -29,6 +29,7 @@
     --text-primary: 210 40% 98%;
     --text-secondary: 215 20% 75%;
     --text-muted: 215 15% 60%;
+    --text-secondary-muted: 215 25% 60%;
     
     /* Status colors */
     --success: 142 76% 36%;
@@ -57,9 +58,10 @@
     --card-bg-light: 210 25% 90%;
     --card-glass-light: 210 30% 88%;
     --card-border-light: 214 20% 75%;
-    --text-primary-light: 222 47% 11%;
+    --text-primary-light:  210 40% 98%;
     --text-secondary-light: 215 25% 25%;
     --text-muted-light: 215 20% 45%;
+    --text-secondary-muted-light: 215 25% 90%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -154,6 +156,7 @@
     --text-primary: var(--text-primary-light);
     --text-secondary: var(--text-secondary-light);
     --text-muted: var(--text-muted-light);
+    --text-secondary-muted: var(--text-secondary-muted-light);
   }
   
   .accent-purple {

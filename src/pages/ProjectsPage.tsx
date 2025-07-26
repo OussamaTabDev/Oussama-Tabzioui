@@ -28,22 +28,22 @@ const ProjectsPage = () => {
 
   const allProjects: Project[] = [
     {
-      title: t('projects.library.title'),
-      description: t('projects.library.description'),
-      longDescription: t('projects.library.long'),
-      image: libraryProject,
-      tech: ['Django', 'Tailwind CSS', 'PostgreSQL', 'JavaScript'],
-      github: 'https://github.com/OussamaTabDev/library-manager',
-      status: 'Completed'
-    },
-    {
       title: t('projects.focusai.title'),
       description: t('projects.focusai.description'),
       longDescription: t('projects.focusai.long'),
       image: focusaiProject,
-      tech: ['Python', 'TensorFlow', 'React', 'Electron'],
+      tech: ['Python', 'FlaskApi', 'React', 'Electron' ,'Tauri' , "MCP"],
       github: 'https://github.com/OussamaTabDev/focusai-tracker',
       status: 'In Progress'
+    },
+    {
+      title: t('projects.library.title'),
+      description: t('projects.library.description'),
+      longDescription: t('projects.library.long'),
+      image: libraryProject,
+      tech: ['Django', 'Tailwind CSS', 'MySQL', 'JavaScript', 'SQLite'],
+      github: 'https://github.com/OussamaTabDev/library-manager',
+      status: 'Completed'
     },
     {
       title: t('projects.ecommerce.title'),
@@ -55,33 +55,87 @@ const ProjectsPage = () => {
       status: 'Completed'
     },
     {
-      title: 'Task Management System',
+      title: 'PFE: AI',
       description: 'A collaborative task management platform with real-time updates and team collaboration features.',
       longDescription: 'Built a comprehensive task management system using React and Node.js. Features include real-time notifications, file sharing, project templates, and advanced filtering. Implemented WebSocket connections for live updates and integrated with popular third-party services.',
       image: libraryProject,
-      tech: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'Express'],
+      tech: ['StreamLit', 'Scikit-learn', 'TenserFlow', 'Numpy', 'Pandas'],
       github: 'https://github.com/OussamaTabDev/task-manager',
-      demo: 'https://tasks.example.com',
+      // demo: 'https://tasks.example.com',
       status: 'Completed'
     },
     {
-      title: 'Weather Analytics Dashboard',
-      description: 'ML-powered weather prediction dashboard with interactive visualizations and historical data analysis.',
+      title: 'Old-Tracker: PMO Manager ',
+      description: 'ML-powered apps prediction dashboard with interactive visualizations and historical data analysis.',
       longDescription: 'Developed a sophisticated weather analytics platform using machine learning algorithms to predict weather patterns. Features include interactive charts, historical data analysis, and API integrations with multiple weather services.',
       image: focusaiProject,
-      tech: ['Python', 'FastAPI', 'React', 'Chart.js', 'Scikit-learn'],
+      tech: ['Python', 'tkinter old version', 'tkinter new version', 'Numpy', 'Pandas', 'Scikit-learn'],
       github: 'https://github.com/OussamaTabDev/weather-dashboard',
       status: 'Completed'
     },
     {
-      title: 'Blockchain Voting System',
+      title: 'FocusAi extension',
       description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
       longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
       image: ecommerceProject,
       tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
       github: 'https://github.com/OussamaTabDev/blockchain-voting',
       status: 'In Progress'
-    }
+    },
+    {
+      title: 'FocusAi extension',
+      description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
+      longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
+      image: ecommerceProject,
+      tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
+      github: 'https://github.com/OussamaTabDev/blockchain-voting',
+      status: 'Completed'
+    },
+    {
+      title: 'FocusAi extension',
+      description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
+      longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
+      image: ecommerceProject,
+      tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
+      github: 'https://github.com/OussamaTabDev/blockchain-voting',
+      status: 'Completed'
+    },
+    {
+      title: 'FocusAi extension',
+      description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
+      longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
+      image: ecommerceProject,
+      tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
+      github: 'https://github.com/OussamaTabDev/blockchain-voting',
+      status: 'Completed'
+    },
+    {
+      title: 'FocusAi extension',
+      description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
+      longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
+      image: ecommerceProject,
+      tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
+      github: 'https://github.com/OussamaTabDev/blockchain-voting',
+      status: 'Completed'
+    },
+    {
+      title: 'FocusAi extension',
+      description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
+      longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
+      image: ecommerceProject,
+      tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
+      github: 'https://github.com/OussamaTabDev/blockchain-voting',
+      status: 'Completed'
+    },
+    {
+      title: 'FocusAi extension',
+      description: 'Secure blockchain-based voting platform ensuring transparency and immutability.',
+      longDescription: 'Created a decentralized voting system using blockchain technology to ensure vote integrity and transparency. Implemented smart contracts for vote validation and created an intuitive web interface for voters and administrators.',
+      image: ecommerceProject,
+      tech: ['Solidity', 'Web3.js', 'React', 'Node.js', 'Ethereum'],
+      github: 'https://github.com/OussamaTabDev/blockchain-voting',
+      status: 'Completed'
+    },
   ];
 
   const openModal = (project: Project) => {
@@ -166,7 +220,7 @@ const ProjectsPage = () => {
                     {project.title}
                   </h3>
                   
-                  <p className="text-text-secondary mb-4 line-clamp-2">
+                  <p className="text-text-primary mb-4 line-clamp-2">
                     {project.description}
                   </p>
                   
@@ -227,7 +281,7 @@ const ProjectsPage = () => {
                 )}
               </div>
               
-              <p className="text-text-secondary mb-6 leading-relaxed">
+              <p className="text-text-primary mb-6 leading-relaxed">
                 {selectedProject.longDescription}
               </p>
               

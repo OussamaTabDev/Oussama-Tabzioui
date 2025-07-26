@@ -77,7 +77,7 @@ const Contact = () => {
               </h3>
               
               <div className="glass-card p-6">
-                <p className="text-text-secondary mb-6 leading-relaxed">
+                <p className="text-text-primary mb-6 leading-relaxed">
                   Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
                 </p>
                 
@@ -108,10 +108,10 @@ const Contact = () => {
               
               {/* Fun Fact */}
               <div className="glass-card p-4 text-center">
-                <p className="text-text-muted text-sm font-mono">
+                <p className="text-text-secondary-muted text-sm font-mono">
                   💡 Fun Fact: Try the Konami Code!
                 </p>
-                <p className="text-xs text-text-muted mt-1">
+                <p className="text-xs text-text-secondary-muted mt-1">
                   ↑↑↓↓←→←→BA
                 </p>
               </div>

@@ -12,7 +12,7 @@ const About = () => {
           </h2>
           
           <div className="glass-card p-8 md:p-12 hover:scale-105 transition-transform duration-300">
-            <p className="text-lg leading-relaxed text-text-secondary">
+            <p className="text-lg leading-relaxed text-text-primary">
               {t('about.content')}
             </p>
           </div>

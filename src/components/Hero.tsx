@@ -81,7 +81,7 @@ const Hero = () => {
             </button>
             
             <a
-              href="/assets/resume.pdf"
+              href="assets/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 glass-card hover:border-accent-primary smooth-transition w-full sm:w-auto justify-center hover-scale"

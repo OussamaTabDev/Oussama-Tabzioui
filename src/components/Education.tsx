@@ -53,17 +53,17 @@ const Education = () => {
                       </div>
                     </div>
                     
-                    <p className="text-text-secondary mb-3">
+                    <p className="text-text-primary mb-3">
                       {edu.school}
                     </p>
-                    
+                    {/* need to chnage after a while */}
                     <div className="flex items-center gap-2">
                       <span className={`skill-tag ${
                         edu.status === 'current' 
                           ? 'border-accent-primary text-accent-primary' 
                           : 'border-accent-secondary text-accent-secondary'
                       }`}>
-                        {edu.status === 'current' ? 'En cours' : 'Complété'}
+                        {edu.status === 'current' ? 'Complete' : 'Complete'}
                       </span>
                     </div>
                   </div>
