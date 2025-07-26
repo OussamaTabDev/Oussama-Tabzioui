@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Github, Download, ArrowDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import avatarImage from '../assets/avatar.png';
-
+// import 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
@@ -81,8 +81,9 @@ const Hero = () => {
             </button>
             
             <a
-              href="assets/resume.pdf"
-              target="_blank"
+              href="./resume.pdf"
+              download="./resume.pdf"   
+              // target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 glass-card hover:border-accent-primary smooth-transition w-full sm:w-auto justify-center hover-scale"
             >
