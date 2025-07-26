@@ -154,7 +154,7 @@ const translations = {
     'nav.contact': 'التواصل',
     
     // Hero
-    'hero.greeting': "مرحبا، أنا أسامة طبزيوي",
+    'hero.greeting': "مرحبا، أنا أسامة ",
     'hero.subtitle': 'مطور ويب متكامل ومتحمس للذكاء الاصطناعي',
     'hero.description': 'أقوم ببناء حلول ويب وخادم سريعة وأنيقة ومدعومة بالذكاء الاصطناعي.',
     'hero.projects': 'المشاريع',

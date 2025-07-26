@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Github, Download, ArrowDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import avatarImage from '../assets/avatar.jpg';
+import avatarImage from '../assets/avatar.png';
 
 const Hero = () => {
   const [typedText, setTypedText] = useState('');
@@ -53,7 +53,7 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 animate-glow-pulse" />
+            <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-accent-primary/15 to-accent-secondary/15 animate-glow-pulse" />
           </div>
 
           {/* Main Heading */}
